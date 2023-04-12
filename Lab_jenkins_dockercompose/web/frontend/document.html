@@ -13,10 +13,11 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <title>Flask HTML Template</title>
   <style>
-    .nav-item{
+    .nav-item {
       margin-top: 1vw;
       cursor: pointer;
     }
+
     .nav-link {
       color: white;
     }
@@ -29,22 +30,26 @@
 
 <body>
   <div class="">
-    <div style="background-color: rgb(0, 0, 0);">
-      <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <p class="nav-link" href="#">ข่าวสาร</p>
-        </li>
-        <li class="nav-item">
-          <p class="nav-link" href="#" >เอกสาร</p>
-        </li>
-        <li class="nav-item">
-          <p class="nav-link" href="#">ฟอร์ม</p>
-        </li>
-        <li class="nav-item">
-          <p class="nav-link" href="#">รายละเอียด</p>
-        </li>
-      </ul>
-    </div>
+    <nav class="navbar navbar-expand-sm bg-dark  justify-content-end">
+      <a class="navbar-brand" href="#">Home</a>
+
+      <div class="collapse navbar-collapse flex-grow-0 ml-auto mr-1">
+        <ul class="navbar-nav text-right">
+          <li class="nav-item">
+            <p class="nav-link" href="#">ข่าวสาร</p>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link" href="#">เอกสาร</p>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link" href="#">ฟอร์ม</p>
+          </li>
+          <li class="nav-item">
+            <p class="nav-link" href="#">รายละเอียด</p>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
 </body>
 
