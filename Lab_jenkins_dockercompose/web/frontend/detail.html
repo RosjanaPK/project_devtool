@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Flask HTML Template</title>
+    <style>
+    .nav-item {
+      margin-top: 1vw;
+      cursor: pointer;
+    }
+
+    
+
+    .nav-link:hover {
+      color: #FF9A3D;
+    }
+  </style>
+  </head>
+
+  <body>
+    <div class="w-screen h-screen">
+      <!-- nav bar  -->
+      <nav class="bg-black">
+        <div class="container mx-auto">
+          <div class="relative flex h-16 items-center justify-between">
+            <a href="./index.html" class="flex text-[#FF9A3D] font-bold text-2xl
+              tracking-wide italic">KMITL COOP</a>
+            <div class="absolute right-0">
+              <div class="flex space-x-4 text-white">
+                <a href="./news.html" class="px-3 py-2 hover:text-[#FF9A3D]">ข่าวสาร</a>
+                <a href="./document.html" class="px-3 py-2
+                  hover:text-[#FF9A3D]">เอกสาร</a>
+                <a href="./form.html" class="px-3 py-2 hover:text-[#FF9A3D]">ฟอร์ม</a>
+                <a href="./detail.html" class="px-3 py-2 font-semibold
+                  text-[#FF9A3D]">รายละเอียด</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container mx-auto justify-center pt-14">
+
+      </div>
+
+    </div>
+  </body>
+
+</html>

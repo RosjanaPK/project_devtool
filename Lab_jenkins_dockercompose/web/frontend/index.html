@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Flask HTML Template</title>
+    <style>
+    .nav-item {
+      margin-top: 1vw;
+      cursor: pointer;
+    }
+
+    .nav-link:hover {
+      color: #FF9A3D;
+    }
+
+    /*Basic structure of slider*/
+.container_image{
+  width: 1200px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/*Area of images*/
+.wrapper{
+  width: 100%;
+  display: flex;
+  animation: slide 16s infinite;
+}
+
+img{
+  width: 100%;
+}
+/*Animation activated by keyframes*/
+@keyframes slide{
+  0%{
+      transform: translateX(0);
+  }
+  25%{
+      transform: translateX(0);
+  }
+  30%{
+      transform: translateX(-100%);
+  }
+  50%{
+      transform: translateX(-100%);
+  }
+  55%{
+      transform: translateX(-200%);
+  }
+  75%{
+      transform: translateX(-200%);
+  }
+  80%{
+      transform: translateX(-300%);
+  }
+  100%{
+      transform: translateX(-300%);
+  }
+}
+  </style>
+  </head>
+
+  <body>
+    <div class="w-screen h-screen">
+      <!-- nav bar  -->
+      <nav class="bg-black">
+        <div class="container mx-auto">
+          <div class="relative flex h-16 items-center justify-between">
+            <a href="./index.html" class="flex text-[#FF9A3D] font-bold text-2xl
+              tracking-wide italic">KMITL COOP</a>
+            <div class="absolute right-0">
+              <div class="flex space-x-4 text-white">
+                <a href="./news.html" class="px-3 py-2 hover:text-[#FF9A3D]">ข่าวสาร</a>
+                <a href="./document.html" class="px-3 py-2
+                  hover:text-[#FF9A3D]">เอกสาร</a>
+                <a href="./form.html" class="px-3 py-2 hover:text-[#FF9A3D]">ฟอร์ม</a>
+                <a href="./detail.html" class="px-3 py-2 hover:text-[#FF9A3D]">รายละเอียด</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container mx-auto justify-center pt-4">
+        <!--Basic structure of slider-->
+        <div class="container_image">
+          <!--Area of the images-->
+          <div class="wrapper">
+            <img
+              src="./images/event_25042566.jpeg">
+            <img
+              src="./images/event_26042566_1.jpeg">
+            <img
+              src="./images/event_26042566_2.jpeg">
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+
+</html>
