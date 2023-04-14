@@ -57,7 +57,8 @@
       font-style: italic;
     }
 
-    .company-files, .PDF-company-file {
+    .company-files,
+    .PDF-company-file {
       margin-top: 2vw;
     }
 
@@ -69,7 +70,8 @@
       border-color: #F8EDE4;
       border-width: 1vw;
     }
-    .link-download{
+
+    .link-download {
       float: right;
     }
   </style>
@@ -82,7 +84,7 @@
       <div class="collapse navbar-collapse flex-grow-0 ml-auto mr-1">
         <ul class="navbar-nav text-right">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">ข่าวสาร</a>
+            <a class="nav-link" href="/index.html">ข่าวสาร</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">เอกสาร</a>
@@ -106,27 +108,16 @@
         </div>
       </div>
       <div class="PDF-file-all mt-2">
+        {% for item in my_array %}
         <div class="PDF-file-all-Coop101">
           <div>
             <i class="fa fa-file-pdf-o" style="font-size:1.5vw;color:red"></i>
-            {{mycontent}}
-            <a class="link-download" href="{{ url_for('download_file') }}" download>Download</a>
+            {{item[0]}}
+            <a class="link-download" href="{{ url_for('download_file', filename=item[1])}}" download>Download</a>
           </div>
         </div>
-        <div class="PDF-file-all-Coop101 mt-2">
-          <div>
-            <i class="fa fa-file-pdf-o" style="font-size:1.5vw;color:red"></i>
-            {{mycontent}}
-            <a class="link-download" href="{{ url_for('download_file') }}" download>Download</a>
-          </div>
-        </div>
-        <div class="PDF-file-all-Coop101 mt-2">
-          <div>
-            <i class="fa fa-file-pdf-o" style="font-size:1.5vw;color:red"></i>
-            {{mycontent}}
-            <a class="link-download" href="{{ url_for('download_file') }}" download>Download</a>
-          </div>
-        </div>
+        {% endfor %}
+        
       </div>
     </div>
     <div class="company-files">
@@ -140,24 +131,11 @@
         <div class="PDF-file-all-Coop101">
           <div>
             <i class="fa fa-file-pdf-o" style="font-size:1.5vw;color:red"></i>
-            {{mycontent}}
-            <a class="link-download" href="{{ url_for('download_file') }}" download>Download</a>
+            <!-- {{mycontent}} -->
+            <!-- <a class="link-download" href="{{ url_for('download_file') }}" download>Download</a> -->
           </div>
         </div>
-        <div class="PDF-file-all-Coop101 mt-2">
-          <div>
-            <i class="fa fa-file-pdf-o" style="font-size:1.5vw;color:red"></i>
-            {{mycontent}}
-            <a class="link-download" href="{{ url_for('download_file') }}" download>Download</a>
-          </div>
-        </div>
-        <div class="PDF-file-all-Coop101 mt-2">
-          <div>
-            <i class="fa fa-file-pdf-o" style="font-size:1.5vw;color:red"></i>
-            {{mycontent}}
-            <a class="link-download" href="{{ url_for('download_file') }}" download>Download</a>
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>
