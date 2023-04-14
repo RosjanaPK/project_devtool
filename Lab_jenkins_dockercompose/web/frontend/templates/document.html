@@ -10,6 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="data:;base64,=">
   <link rel="icon"
@@ -17,127 +18,104 @@
 
   <title>Flask HTML Template</title>
   <style>
-    .nav-item {
+   .nav-item {
+      margin-top: 1vw;
       cursor: pointer;
-      font-size: 1.1vw;
     }
 
-    .nav-link {
-      color: white;
-    }
+    
 
     .nav-link:hover {
       color: #FF9A3D;
-    }
-
-    .navbar-brand {
-      color: #FF9A3D;
-      margin-top: 1vw;
-      margin-left: 2vw;
-      font-weight: bolder;
-      font-size: 2vw;
-    }
-
-    .content {
-      padding: 5vw;
-    }
-
-    .text-file-all,
-    .text-file-company {
-      display: inline;
-      font-size: 1.1vw;
-      font-weight: 700;
-      color: #9C9C9C;
-      font-style: italic;
-    }
-
-    .text-file {
-      font-size: 2vw;
-      font-weight: bold;
-      font-style: italic;
-    }
-
-    .company-files,
-    .PDF-company-file {
-      margin-top: 2vw;
-    }
-
-    .PDF-file-all-Coop101 {
-      width: 100%;
-      background-color: #F8EDE4;
-      font-size: 1vw;
-      border-style: solid;
-      border-color: #F8EDE4;
-      border-width: 1vw;
-    }
-
-    .link-download {
-      float: right;
     }
   </style>
 </head>
 
 <body>
-  <div class="top-nav">
-    <nav class="navbar navbar-expand-sm bg-dark  justify-content-end">
-      <p class="navbar-brand">KMITL COOP</p>
-      <div class="collapse navbar-collapse flex-grow-0 ml-auto mr-1">
-        <ul class="navbar-nav text-right">
-          <li class="nav-item">
-            <a class="nav-link" href="/index.html">ข่าวสาร</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">เอกสาร</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" style="color: #FF9A3D">ฟอร์ม</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">รายละเอียด</a>
-          </li>
-        </ul>
+  <div class="w-screen h-screen">
+    <!-- nav bar  -->
+    <nav class="bg-black">
+      <div class="container mx-auto">
+        <div class="relative flex h-16 items-center justify-between">
+          <a href="./index.html" class="flex text-[#FF9A3D] font-bold text-2xl
+            tracking-wide italic">KMITL COOP</a>
+          <div class="absolute right-0">
+            <div class="flex space-x-4 text-white">
+              <a href="./news.html" class="px-3 py-2 hover:text-[#FF9A3D]">ข่าวสาร</a>
+              <a href="./document.html" class="px-3 py-2 font-semibold
+                text-[#FF9A3D]">เอกสาร</a>
+              <a href="./form.html" class="px-3 py-2 hover:text-[#FF9A3D]">ฟอร์ม</a>
+              <a href="./detail.html" class="px-3 py-2 hover:text-[#FF9A3D]">รายละเอียด</a>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
-  </div>
-  <div class="content">
-    <div class="all-files">
-      <div class="title-all-files">
-        <div class="text-file">
-          Files
-          <p class="text-file-all">(All)</p>
-        </div>
+
+    <div class="container mx-auto justify-center pt-14">
+      <div class="flex items-center justify-center">
+        <div class="w-1/3 h-10"></div>
       </div>
-      <div class="PDF-file-all mt-2">
-        {% for item in my_array %}
-        <div class="PDF-file-all-Coop101">
-          <div>
-            <i class="fa fa-file-pdf-o" style="font-size:1.5vw;color:red"></i>
-            {{item[0]}}
-            <a class="link-download" href="{{ url_for('download_file', filename=item[1])}}" download>Download</a>
+
+      <!-- Files (All) -->
+      <div class="pt-10 text-[#FF9A3D] font-bold text-2xl tracking-wide
+        italic ">Files <span class="text-base text-[#9C9C9C]">(All)</span>
+      </div>
+      {% for item in my_array %}
+      <div class="border rounded-2xl my-5 py-4 px-10 flex drop-shadow-md
+        bg-[#F8EDE4]">
+        <img src="{{ url_for('static_image', filename='pdf.png')}}" width="30" height="200"/>
+    
+        <div class="flex px-14 items-center">
+          <p>{{item[0]}}</p>
+        </div>
+        <div class="absolute right-0 pr-10 ">
+          <div class="flex space-x-6 pt-1">
+            <a class="font-bold" href="{{ url_for('download_file', filename=item[1])}}" download>Download</a>
+            <img src="{{ url_for('static_image', filename='download.png')}}" width="30" height="200"/>
           </div>
         </div>
-        {% endfor %}
-        
       </div>
-    </div>
-    <div class="company-files">
-      <div class="title-company-files">
-        <div class="text-file">
-          Files
-          <p class="text-file-company">(For company)</p>
+      {% endfor %}
+      
+
+      <!-- Files (For company) -->
+      <div class="pt-10 text-[#FF9A3D] font-bold text-2xl tracking-wide
+        italic ">Files <span class="text-base text-[#9C9C9C]">(For company)</span>
+      </div>
+
+      <div class="border rounded-2xl my-5 py-4 px-10 flex drop-shadow-md
+        bg-[#F8EDE4]">
+        <img src="./images/pdf.png" width="30" height="200"/>
+        <div class="flex px-14 items-center">
+          <p>Coop302.pdf</p>
         </div>
-      </div>
-      <div class="PDF-company-file mt-2">
-        <div class="PDF-file-all-Coop101">
-          <div>
-            <i class="fa fa-file-pdf-o" style="font-size:1.5vw;color:red"></i>
-            <!-- {{mycontent}} -->
-            <!-- <a class="link-download" href="{{ url_for('download_file') }}" download>Download</a> -->
+        <div class="absolute right-0 pr-10 ">
+          <div class="flex space-x-6 pt-1">
+            <p class="font-bold">Download</p>
+            <img src="./images/download.png" width="30" height="200"/>
           </div>
         </div>
-        
       </div>
+
+      <div class="border rounded-2xl my-5 py-4 px-10 flex drop-shadow-md
+        bg-[#F8EDE4]">
+        <img src="./images/pdf.png" width="30" height="200"/>
+        <div class="flex px-14 items-center">
+          <p>Coop306.pdf</p>
+        </div>
+        <div class="absolute right-0 pr-10 ">
+          <div class="flex space-x-6 pt-1">
+            <p class="font-bold">Download</p>
+            <img src="./images/download.png" width="30" height="200"/>
+          </div>
+        </div>
+      </div>
+
+
     </div>
+
+
   </div>
 </body>
 
