@@ -37,15 +37,15 @@
     <nav class="bg-black">
       <div class="container mx-auto">
         <div class="relative flex h-16 items-center justify-between">
-          <a href="./index.html" class="flex text-[#FF9A3D] font-bold text-2xl
+          <a href="/index.html" class="flex text-[#FF9A3D] font-bold text-2xl
             tracking-wide italic">KMITL COOP</a>
           <div class="absolute right-0">
             <div class="flex space-x-4 text-white">
-              <a href="./news.html" class="px-3 py-2 hover:text-[#FF9A3D]">ข่าวสาร</a>
-              <a href="./document.html" class="px-3 py-2 font-semibold
+              <a href="news.html" class="px-3 py-2 hover:text-[#FF9A3D]">ข่าวสาร</a>
+              <a href="document.html" class="px-3 py-2 font-semibold
                 text-[#FF9A3D]">เอกสาร</a>
-              <a href="./form.html" class="px-3 py-2 hover:text-[#FF9A3D]">ฟอร์ม</a>
-              <a href="./detail.html" class="px-3 py-2 hover:text-[#FF9A3D]">รายละเอียด</a>
+              <a href="form.html" class="px-3 py-2 hover:text-[#FF9A3D]">ฟอร์ม</a>
+              <a href="detail.html" class="px-3 py-2 hover:text-[#FF9A3D]">รายละเอียด</a>
             </div>
           </div>
         </div>
@@ -64,15 +64,15 @@
       {% for item in my_array %}
       <div class="border rounded-2xl my-5 py-4 px-10 flex drop-shadow-md
         bg-[#F8EDE4]">
-        <img src="{{ url_for('static_image', filename='pdf.png')}}" width="30" height="200"/>
+        <img src="{{ url_for('static', filename='images/pdf.png')}}" width="30" height="200"/>
     
         <div class="flex px-14 items-center">
-          <p>{{item[0]}}</p>
+          <p>{{item}}</p>
         </div>
         <div class="absolute right-0 pr-10 ">
           <div class="flex space-x-6 pt-1">
-            <a class="font-bold" href="{{ url_for('download_file', filename=item[1])}}" download>Download</a>
-            <img src="{{ url_for('static_image', filename='download.png')}}" width="30" height="200"/>
+            <a class="font-bold" href="{{ url_for('static', filename='document/'+item)}}" download>Download</a>
+            <img src="{{ url_for('static', filename='images/download.png')}}" width="30" height="200"/>
           </div>
         </div>
       </div>

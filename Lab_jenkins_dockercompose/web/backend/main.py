@@ -1,5 +1,5 @@
 import uvicorn
-
+import os
 import numpy as np
 import cv2
 import base64
@@ -7,6 +7,7 @@ from typing import List
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from flask import Flask, render_template, send_file, request, send_from_directory
 
 
 app = FastAPI()
@@ -34,7 +35,7 @@ app.add_middleware(
 
 class FileRequest(BaseModel):
     file_name: str
-    file_path: str
+
 
 
 
@@ -42,5 +43,6 @@ class FileRequest(BaseModel):
 async def process_file(file_request: FileRequest):
 
     return {"file_name": file_request.file_name,
-            "file_path": file_request.file_path,
+
             }
+
