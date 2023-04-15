@@ -13,6 +13,7 @@ app = FastAPI()
 origins = [
     "http://localhost:8080",
     "http://localhost:8000",
+    "http://localhost:8081",
     "http://localhost:3000",
     "https://stackpython.co"
 
@@ -30,13 +31,13 @@ app.add_middleware(
 
 
 
-@app.post('/getfrom')
+@app.get('/getfrom')
 async def getfrom():
+    cnx = mysql.connector.connect(user='root', password='123456',
+                        host='localhost', port='3308', database='devtool_db')
+    cursor = cnx.cursor()
+    cursor.execute("SELECT * FROM form")
     try:
-        cnx = mysql.connector.connect(user='root', password='123456',
-                              host='localhost', port='3307', database='devtool_db')
-        cursor = cnx.cursor()
-        cursor.execute("SELECT * FROM form")
         # Fetch the results into a Python variable
         results = cursor.fetchall()
         result_list = []

@@ -2,33 +2,13 @@ import os
 from flask import Flask, render_template, send_file, request, send_from_directory
 import requests
 from pydantic import BaseModel
-import matplotlib.pyplot as plt
-import numpy as np
-import cv2
-import json
 from PyPDF2 import PdfReader
-import mysql.connector
 
 
 app = Flask(__name__)
 
-url = "http://localhost:8000"
+url = "http://localhost:8088"
 
-connection = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="159PooK159.",
-    database="project_devtool"
-)
-
-db_lecturers = connection.cursor()
-
-db_lecturers.execute("SELECT * FROM lecturers")
-
-lecturers = db_lecturers.fetchall()
-
-# for data in lecturers:
-#   print(data)
 
 @app.route('/index.html')
 def index():
@@ -37,17 +17,12 @@ def index():
 
 @app.route('/detail.html')
 def detail():
-    return render_template("detail.html", list_lecturers=lecturers)
+    return render_template("detail.html")
 
-# @app.route('/images/lecturers')
-# def img_lecturers():
-#     img = os.listdir(os.path.join(app.static_folder, "lecturers"))
-#     print("-"+img)
-#     return render_template('detail.html', list_img=img)
 
 @app.route('/form.html')
 def form():
-    response = requests.post(url+'/getfrom')
+    response = requests.get(url+'/getfrom')
     data = response.json()
     return render_template("form.html", mycontent=data)
 

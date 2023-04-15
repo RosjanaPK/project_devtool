@@ -1,6 +1,8 @@
-flask
 fastapi
+uvicorn[standard]
 requests
 PyPDF2
 mysql-connector-python
+psycopg2-binary
+flask
 
