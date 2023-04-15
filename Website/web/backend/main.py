@@ -34,7 +34,11 @@ app.add_middleware(
 @app.get('/getfrom')
 async def getfrom():
     cnx = mysql.connector.connect(user='root', password='123456',
+<<<<<<< HEAD
                         host='localhost', port='3307', database='devtool_db')
+=======
+                        host='localhost', port='3308', database='devtool_db')
+>>>>>>> abbc344e9db7ee427ed47be57ffd20346a175335
     cursor = cnx.cursor()
     cursor.execute("SELECT * FROM form")
     try:
