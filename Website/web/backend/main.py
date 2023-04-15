@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from flask import Flask, render_template, send_file, request, send_from_directory
+import psycopg2
 
 
 app = FastAPI()
@@ -33,8 +34,10 @@ app.add_middleware(
 
 @app.get('/getfrom')
 async def getfrom():
-    cnx = mysql.connector.connect(user='root', password='123456',
-                        host='localhost', port='3307', database='devtool_db')
+    cnx =  psycopg2.connect( host="db",
+        database="myapp",
+        user="postgres",
+        password="postgres")
 
 
     cursor = cnx.cursor()

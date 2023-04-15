@@ -7,7 +7,7 @@ from PyPDF2 import PdfReader
 
 app = Flask(__name__)
 
-url = "http://localhost:8088"
+url = "http://backend:8000"
 
 
 @app.route('/index.html')
