@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Flask HTML Template</title>
+</head>
+
+<body>
+    <div class="w-screen h-max bg-[#FF9A3D]/25 py-10">
+        <div class="container mx-auto rounded-2xl bg-white p-10">
+            <p class="font-bold text-2xl text-[#FF9A3D]">แบบฟอร์มสมัครเข้าร่วมรายวิชาสหกิจศึกษา
+                ภาคเรียนที่ 1/2566</p>
+            <p class="font-semibold text-gray-400">Q W E R T Y U I O P |
+                A S D F G H J K L : " Z X C V B N M > 0 9 8 7 6 5 4 3 2
+                1 ? ! @ # $ % ^ & * ( ) _ +</p>
+            <div class="relative flex items-center font-medium pt-7">
+                <div class="grow border-t border-[#9C9C9C]"></div>
+            </div>
+
+            <p class="font-semibold text-2xl py-5">ข้อมูลนักศึกษา</p>
+
+            <div class="grid gap-6">
+                <div class="grid gap-2">
+                    <label class="block text-lg">ชื่อ นาสกุล (ภาษาไทย)</label>
+                    <input type="text" name="name_th" id="name_th" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                            rounded-md p-3" />
+                </div>
+                <div class="grid gap-2">
+                    <label class="block text-lg">ชื่อ นาสกุล (ภาษาอังกฤษ)</label>
+                    <input type="text" name="name_eng" id="name_" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                            rounded-md p-3" />
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="grid gap-2">
+                        <label class="block text-lg">รหัสนักศึกษา</label>
+                        <input type="text" name="id" id="id" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                                rounded-md p-3" />
+                    </div>
+                    <div class="grid gap-2">
+                        <label class="block text-lg">อีเมล</label>
+                        <input type="text" name="email" id="email" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                                rounded-md p-3" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="grid gap-2">
+                        <label class="block text-lg">สาขา</label>
+                        <input type="text" name="major" id="major" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                                rounded-md p-3" />
+                    </div>
+                    <div class="grid gap-2">
+                        <label class="block text-lg">แขนง <span class="text-gray-400">(ถ้ามี)</span></label>
+                        <input type="text" name="branch" id="branch" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                                rounded-md p-3" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="grid gap-2">
+                        <label class="block text-lg">เบอร์โทรศัพท์</label>
+                        <input type="text" name="phone" id="phone" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                                rounded-md p-3" />
+                    </div>
+                    <div class="grid gap-2">
+                        <label class="block text-lg">เกรดเฉลี่ยสะสม (GPA)</label>
+                        <input type="text" name="grade" id="grade" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                                rounded-md p-3" />
+                    </div>
+                </div>
+
+                <div class="relative flex items-center font-medium pt-5">
+                    <div class="grow border-t border-[#9C9C9C]"></div>
+                </div>
+
+                <!-- --------------------------------------------------- -->
+                <p class="font-semibold text-2xl">ข้อมูลสถานประกอบการ</p>
+                <div class="grid gap-2">
+                    <label class="block text-lg">ชื่อสถานประกอบการ</label>
+                    <input type="text" name="company_name" id="company_name" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                            rounded-md p-3" />
+                </div>
+                <div class="grid gap-2">
+                    <label class="block text-lg">ที่อยู่สถานประกอบการ</label>
+                    <input type="text" name="company_address" id="company_address" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                            rounded-md p-3" />
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="grid gap-2">
+                        <label class="block text-lg">ชื่อผู้ประสานงาน</label>
+                        <input type="text" name="coordinator_name" id="coordinator_name" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                                rounded-md p-3" />
+                    </div>
+                    <div class="grid gap-2">
+                        <label class="block text-lg">เบอร์โทรศัพท์</label>
+                        <input type="text" name="coordinator_phone" id="coordinator_phone" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                                rounded-md p-3" />
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="grid gap-2">
+                        <label class="block text-lg">ตำแหน่ง</label>
+                        <input type="text" name="coordinator_position" id="coordinator_position" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                                rounded-md p-3" />
+                    </div>
+                    <div class="grid gap-2">
+                        <label class="block text-lg">อีเมล</label>
+                        <input type="text" name="coordinator_email" id="coordinator_email" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                                rounded-md p-3" />
+                    </div>
+                </div>
+
+                <div class="relative flex items-center font-medium pt-5">
+                    <div class="grow border-t border-[#9C9C9C]"></div>
+                </div>
+
+                <!-- --------------------------------------------------- -->
+                <p class="font-semibold text-2xl">ข้อมูลการสมัครงานสหกิจศึกษา</p>
+                <div class="grid gap-2">
+                    <label class="block text-lg">ชื่อโปรเจคที่ปฏิบัติระหว่างปฏิบัติงานสหกิจศึกษา</label>
+                    <input type="text" name="project_name" id="project_name" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                            rounded-md p-3" />
+                </div>
+                <div class="grid gap-2">
+                    <label class="block text-lg">ตำแหน่ง</label>
+                    <input type="text" name="position" id="position" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                            rounded-md p-3" />
+                </div>
+                <div class="grid gap-2">
+                    <label class="block text-lg">รายละเอียดงาน</label>
+                    <input type="text" name="description" id="description" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                            rounded-md p-3" />
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="grid gap-2">
+                        <label class="block text-lg">เวลาปฏิบัติงาน
+                            (ชั่วโมง/สัปดาห์)</label>
+                        <input type="text" name="time" id="time" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                                rounded-md p-3" />
+                    </div>
+                    <div class="grid gap-2">
+                        <label class="block text-lg">ค่าตอบแทน</label>
+                        <input type="text" name="payment" id="payment" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                                rounded-md p-3" />
+                    </div>
+                </div>
+                <div class="grid gap-2">
+                    <label class="block text-lg">สวัสดิการอื่นๆ <span class="text-gray-400">(ถ้ามี)</span></label>
+                    <input type="text" name="benefit" id="benefit" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                            rounded-md p-3" />
+                </div>
+
+                <div class="relative flex items-center font-medium pt-5">
+                    <div class="grow border-t border-[#9C9C9C]"></div>
+                </div>
+
+                <!-- --------------------------------------------------- -->
+                <p class="font-semibold text-2xl">ข้อมูลการสมัครงานสหกิจศึกษา</p>
+                <div class="grid gap-2">
+                    <label class="block text-lg">ชื่ออาจารย์ที่ปรึกษา</label>
+                    <input type="text" name="advisor_name" id="advisor_name" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                            rounded-md p-3" />
+                </div>
+                <div class="grid gap-2">
+                    <label class="block text-lg">ชื่ออาจารย์นิเทศ</label>
+                    <input type="text" name="supervisor_name" id="supervisor_name" class="border border-[#D2CFCF] bg-[#F9FAFB]
+                            rounded-md p-3" />
+                </div>
+
+                <div class="relative flex items-center font-medium pt-5">
+                    <div class="grow border-t border-[#9C9C9C]"></div>
+                </div>
+
+                <!-- --------------------------------------------------- -->
+                <p class="font-semibold text-2xl">ไฟล์เอกสารทั้งหมด</p>
+
+                <div class="grid gap-2">
+                    <label class="block text-lg">Resume</label>
+                    <form>
+                        <input type="file" name="file-input" id="file-input" class="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400
+                              file:bg-transparent file:border-0
+                              file:bg-gray-100 file:mr-4
+                              file:py-3 file:px-4
+                              dark:file:bg-gray-700 dark:file:text-gray-400">
+                    </form>
+                </div>
+                <div class="grid gap-2">
+                    <label class="block text-lg">Transcript</label>
+                    <form>
+                        <input type="file" name="file-input" id="file-input" class="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400
+                              file:bg-transparent file:border-0
+                              file:bg-gray-100 file:mr-4
+                              file:py-3 file:px-4
+                              dark:file:bg-gray-700 dark:file:text-gray-400">
+                    </form>
+                </div>
+                <div class="grid gap-2">
+                    <label class="block text-lg">ใบสมัครงานสหกิจศึกษา 2563</label>
+                    <form>
+                        <input type="file" name="file-input" id="file-input" class="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400
+                              file:bg-transparent file:border-0
+                              file:bg-gray-100 file:mr-4
+                              file:py-3 file:px-4
+                              dark:file:bg-gray-700 dark:file:text-gray-400">
+                    </form>
+                </div>
+                <div class="grid gap-2">
+                    <label class="block text-lg">Checkilist เช็คคุณสมบัติการเข้าร่วมสหกิจศึกษา-IT</label>
+                    <form>
+                        <input type="file" name="file-input" id="file-input" class="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400
+                              file:bg-transparent file:border-0
+                              file:bg-gray-100 file:mr-4
+                              file:py-3 file:px-4
+                              dark:file:bg-gray-700 dark:file:text-gray-400">
+                    </form>
+                </div>
+                <div class="grid gap-2">
+                    <label class="block text-lg">แบบตอบรับนักศึกษาสหกิจศึกษา ver 2566</label>
+                    <form>
+                        <input type="file" name="file-input" id="file-input" class="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400
+                              file:bg-transparent file:border-0
+                              file:bg-gray-100 file:mr-4
+                              file:py-3 file:px-4
+                              dark:file:bg-gray-700 dark:file:text-gray-400">
+                    </form>
+                </div>
+                <div class="grid gap-2">
+                    <label class="block text-lg">แบบยืนยันการเป็นอาจารย์ที่ปรึกษาสหกิจศึกษา</label>
+                    <form>
+                        <input type="file" name="file-input" id="file-input" class="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400
+                              file:bg-transparent file:border-0
+                              file:bg-gray-100 file:mr-4
+                              file:py-3 file:px-4
+                              dark:file:bg-gray-700 dark:file:text-gray-400">
+                    </form>
+                </div>
+                <div class="grid gap-2">
+                    <label class="block text-lg">แบบเสนอหัวข้อโครงงานสำหรับสหกิจศึกษา</label>
+                    <form>
+                        <input type="file" name="file-input" id="file-input" class="block w-full border border-gray-200 shadow-sm rounded-md text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400
+                              file:bg-transparent file:border-0
+                              file:bg-gray-100 file:mr-4
+                              file:py-3 file:px-4
+                              dark:file:bg-gray-700 dark:file:text-gray-400">
+                    </form>
+                </div>
+
+                <button class="bg-[#FF9A3D]/80 mt-4 p-3 rounded-xl text-lg font-semibold shadow-md">Submit</button>
+
+                <!-- <label for="cover-photo" class="block text-sm font-medium
+                        leading-6 text-gray-900">Cover photo</label> -->
+                <!-- <div class="mt-2 flex justify-center rounded-lg border
+                        border-dashed border-gray-900/25 px-6 py-10">
+                        <div class="text-center">
+                            <svg class="mx-auto h-12 w-12 text-gray-300"
+                                viewBox="0 0 24 24" fill="currentColor"
+                                aria-hidden="true">
+                                <path fill-rule="evenodd" d="M1.5 6a2.25 2.25 0
+                                    012.25-2.25h16.5A2.25 2.25 0 0122.5
+                                    6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25
+                                    0 011.5 18V6zM3 16.06V18c0
+                                    .414.336.75.75.75h16.5A.75.75 0 0021
+                                    18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12
+                                    0l-.88.879.97.97a.75.75 0 11-1.06
+                                    1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3
+                                    16.061zm10.125-7.81a1.125 1.125 0 112.25 0
+                                    1.125 1.125 0 01-2.25 0z"
+                                    clip-rule="evenodd" />
+                                </svg>
+                                <div class="mt-4 flex text-sm leading-6
+                                    text-gray-600">
+                                    <label for="file-upload" class="relative
+                                        cursor-pointer rounded-md bg-white
+                                        font-semibold text-indigo-600
+                                        focus-within:outline-none
+                                        focus-within:ring-2
+                                        focus-within:ring-indigo-600
+                                        focus-within:ring-offset-2
+                                        hover:text-indigo-500">
+                                        <span>Upload a file</span>
+                                        <input id="file-upload"
+                                            name="file-upload" type="file"
+                                            class="sr-only">
+                                    </label>
+                                    <p class="pl-1">or drag and drop</p>
+                                </div>
+                                <p class="text-xs leading-5 text-gray-600">PNG,
+                                    JPG, GIF up to 10MB</p>
+                            </div>
+                        </div>
+                    </div> -->
+
+            </div>
+        </div>
+</body>
+
+</html>
