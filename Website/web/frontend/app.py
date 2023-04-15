@@ -18,35 +18,33 @@ url = "http://localhost:8000"
 def index():
     return render_template("index.html")
 
+
 @app.route('/detail.html')
 def detail():
     return render_template("detail.html")
 
+
 @app.route('/form.html')
 def form():
-    return render_template("form.html")
+    response = requests.post(url+'/getfrom')
+    data = response.json()
+    return render_template("form.html", mycontent=data)
+
+
 
 @app.route('/news.html')
 def news():
     return render_template("news.html")
+
 
 @app.route('/document.html')
 def document():
     My_list = []
     folder_path = "./static/document"
     for file in os.listdir(folder_path):
-        payload = {
-            "file_name": file,
-        }
-        response = requests.post(f"{url}/process-file", json=payload)
-
-        data = json.loads(response.content)
-        processed_file_string = data["file_name"]
-        # processed_file_path_string = data["file_path"]
-        My_list.append(processed_file_string)           
+        My_list.append(file)
     return render_template("document.html", my_array=My_list)
-  
+
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port="8081")
-    
+    app.run(host="0.0.0.0", port="8081")
