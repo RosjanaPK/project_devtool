@@ -2,10 +2,6 @@ import os
 from flask import Flask, render_template, send_file, request, send_from_directory
 import requests
 from pydantic import BaseModel
-import matplotlib.pyplot as plt
-import numpy as np
-import cv2
-import json
 from PyPDF2 import PdfReader
 
 
@@ -26,7 +22,7 @@ def detail():
 
 @app.route('/form.html')
 def form():
-    response = requests.post(url+'/getfrom')
+    response = requests.get(url+'/getfrom')
     data = response.json()
     return render_template("form.html", mycontent=data)
 

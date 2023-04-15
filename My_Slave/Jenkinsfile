@@ -17,13 +17,13 @@ pipeline {
         }
         stage('Pull from Docker') {
           steps {
-               dir('Lab_jenkins_dockercompose') { // change directory to Lab_docker_Jenkins
+               dir('"Website"') { // change directory to Lab_docker_Jenkins
                     echo "Pull . ."
                     sh "docker-compose pull"
                 }
           }
         }
-        stage('Start stage') {
+        stage('Website') {
             steps {
                 dir('Lab_jenkins_dockercompose') { // change directory to Lab_docker_Jenkins
                     echo "Start . ."
