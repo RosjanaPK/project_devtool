@@ -4,13 +4,15 @@ version: '3.3'
 services:
 
   frontend:
-    build: ./web/frontend    
+    build: ./web/frontend 
+    image: web/frontend:1.0  
     ports:
       - "8081:8081"
     depends_on:
       - db
   backend:
     build: ./web/backend
+    image: web/backend:1.0 
     ports:
       - "8088:80"
     depends_on:
