@@ -13,8 +13,13 @@ app = Flask(__name__)
 # For Mysql
 url = "http://localhost:8000"
 
-@app.route('/index.html')
+@app.route('/')
 def index():
+    return render_template("index.html")
+
+
+@app.route('/index.html')
+def index_path():
     return render_template("index.html")
 
 
@@ -27,6 +32,7 @@ def detail():
 
 @app.route('/form.html')
 def form():
+
     response = requests.get(url+'/getfrom')
     data = response.json()
     return render_template("form.html", mycontent=data)
@@ -41,10 +47,15 @@ def news():
 @app.route('/document.html')
 def document():
     My_list = []
+    My_List_2 = []
     folder_path = "./static/document"
     for file in os.listdir(folder_path):
         My_list.append(file)
-    return render_template("document.html", my_array=My_list)
+
+    folder_path = "./static/document_for_company"
+    for file in os.listdir(folder_path):
+        My_List_2.append(file)
+    return render_template("document.html", my_array=My_list, My_array_2 = My_List_2)
 
 
 @app.route('/form_input.html')

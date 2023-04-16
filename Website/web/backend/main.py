@@ -60,6 +60,36 @@ app.add_middleware(
 #         cursor.close()
 #         cnx.close()
 
+# @app.get('/getdetail')
+# async def getfrom():
+#     cnx =  psycopg2.connect( host="db",
+#         database="myapp",
+#         user="postgres",
+#         password="postgres")
+
+    # cursor = cnx.cursor()
+    # cursor.execute("SELECT * FROM lecturers")
+    # try:
+    #     # Fetch the results into a Python variable
+    #     results = cursor.fetchall()
+    #     result_list = []
+    #     for row in results:
+    #         result = {
+    #             "id": row[0],
+    #             "name": row[1],
+    #             "email": row[2],
+    #             "office": row[3],
+    #             "img": row[4]
+    #         }
+    #         result_list.append(result)
+    #     return result_list
+    # except (Exception, mysql.connector.DatabaseError):
+    #     return False
+    # finally:
+    #     cursor.close()
+    #     cnx.close()
+
+
 #For mysql
 @app.get('/getfrom')
 async def getfrom():
@@ -103,7 +133,8 @@ async def getfrom():
                 "name": row[1],
                 "email": row[2],
                 "office": row[3],
-                "img": row[4]
+                "img": row[4],
+                "path": row[2].split("@")
             }
             result_list.append(result)
         return result_list

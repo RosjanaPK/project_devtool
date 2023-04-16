@@ -45,7 +45,7 @@
               <a href="document.html" class="px-3 py-2 font-semibold
                 text-[#FF9A3D]">เอกสาร</a>
               <a href="form.html" class="px-3 py-2 hover:text-[#FF9A3D]">ฟอร์ม</a>
-              <a href="detail.html" class="px-3 py-2 hover:text-[#FF9A3D]">รายละเอียด</a>
+              <a href="detail.html" class="px-3 py-2 hover:text-[#FF9A3D]">รายชื่ออาจารย์</a>
             </div>
           </div>
         </div>
@@ -83,34 +83,22 @@
       <div class="pt-10 text-[#FF9A3D] font-bold text-2xl tracking-wide
         italic ">Files <span class="text-base text-[#9C9C9C]">(For company)</span>
       </div>
-
+      {% for item2 in My_array_2 %}
       <div class="border rounded-2xl my-5 py-4 px-10 flex drop-shadow-md
         bg-[#F8EDE4]">
-        <img src="./images/pdf.png" width="30" height="200"/>
+        <img src="{{ url_for('static', filename='images/pdf.png')}}" width="30" height="200"/>
         <div class="flex px-14 items-center">
-          <p>Coop302.pdf</p>
+          <p>{{item2}}</p>
         </div>
         <div class="absolute right-0 pr-10 ">
           <div class="flex space-x-6 pt-1">
-            <p class="font-bold">Download</p>
-            <img src="./images/download.png" width="30" height="200"/>
+            <a class="font-bold" href="{{ url_for('static', filename='document_for_company/'+item2)}}" download>Download</a>
+            <img src="{{ url_for('static', filename='images/download.png')}}" width="30" height="200"/>
           </div>
         </div>
       </div>
-
-      <div class="border rounded-2xl my-5 py-4 px-10 flex drop-shadow-md
-        bg-[#F8EDE4]">
-        <img src="./images/pdf.png" width="30" height="200"/>
-        <div class="flex px-14 items-center">
-          <p>Coop306.pdf</p>
-        </div>
-        <div class="absolute right-0 pr-10 ">
-          <div class="flex space-x-6 pt-1">
-            <p class="font-bold">Download</p>
-            <img src="./images/download.png" width="30" height="200"/>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
+      
 
 
     </div>
