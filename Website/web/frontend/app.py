@@ -8,12 +8,14 @@ from PyPDF2 import PdfReader
 app = Flask(__name__)
 
 # For docker
-#url = "http://backend:8000"
+url = "http://backend:8000"
 
 # # For Mysql
 # url = "http://localhost:8000"
 #For jenkins
-url = "http://54.196.54.244:8000"
+
+# url = "http://54.196.54.244:8000"
+
 @app.route('/')
 def index():
     return render_template("index.html")
