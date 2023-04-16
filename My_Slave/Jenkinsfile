@@ -17,7 +17,7 @@ pipeline {
         }
         stage('Pull from Docker') {
           steps {
-               dir('"Website"') { // change directory to Lab_docker_Jenkins
+               dir('Website') { // change directory to Lab_docker_Jenkins
                     echo "Pull . ."
                     sh "docker-compose pull"
                 }
