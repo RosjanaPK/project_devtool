@@ -7,8 +7,11 @@ from PyPDF2 import PdfReader
 
 app = Flask(__name__)
 
-url = "http://backend:8000"
+# For docker
+# url = "http://backend:8000"
 
+# For Mysql
+url = "http://localhost:8000"
 
 @app.route('/index.html')
 def index():
@@ -17,7 +20,9 @@ def index():
 
 @app.route('/detail.html')
 def detail():
-    return render_template("detail.html")
+    response = requests.get(url+'/getdetail')
+    data = response.json()
+    return render_template("detail.html", mycontent=data)
 
 
 @app.route('/form.html')
@@ -40,6 +45,11 @@ def document():
     for file in os.listdir(folder_path):
         My_list.append(file)
     return render_template("document.html", my_array=My_list)
+
+
+@app.route('/form_input.html')
+def form_input():
+    return render_template("form_input.html")
 
 
 if __name__ == '__main__':

@@ -1,58 +1,89 @@
-
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="data:;base64,=">
-    <link rel="icon"
-      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVQI12P4//8/AAX+Av7czFnnAAAAAElFTkSuQmCC">
-    <script src="https://cdn.tailwindcss.com"></script>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:;base64,=">
+  <link rel="icon"
+    href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVQI12P4//8/AAX+Av7czFnnAAAAAElFTkSuQmCC">
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <title>Flask HTML Template</title>
-    <style>
+  <title>Flask HTML Template</title>
+  <style>
     .nav-item {
       margin-top: 1vw;
       cursor: pointer;
     }
 
-    
+
 
     .nav-link:hover {
       color: #FF9A3D;
     }
   </style>
-  </head>
+</head>
 
-  <body>
-    <div class="w-screen h-screen">
-      <!-- nav bar  -->
-      <nav class="bg-black">
-        <div class="container mx-auto">
-          <div class="relative flex h-16 items-center justify-between">
-            <a href="./index.html" class="flex text-[#FF9A3D] font-bold text-2xl
+<body>
+  <div class="w-screen h-screen">
+    <!-- nav bar  -->
+    <nav class="bg-black">
+      <div class="container mx-auto">
+        <div class="relative flex h-16 items-center justify-between">
+          <a href="./index.html" class="flex text-[#FF9A3D] font-bold text-2xl
               tracking-wide italic">KMITL COOP</a>
-            <div class="absolute right-0">
-              <div class="flex space-x-4 text-white">
-                <a href="./news.html" class="px-3 py-2 hover:text-[#FF9A3D]">ข่าวสาร</a>
-                <a href="./document.html" class="px-3 py-2
+          <div class="absolute right-0">
+            <div class="flex space-x-4 text-white">
+              <a href="./news.html" class="px-3 py-2 hover:text-[#FF9A3D]">ข่าวสาร</a>
+              <a href="./document.html" class="px-3 py-2
                   hover:text-[#FF9A3D]">เอกสาร</a>
-                <a href="./form.html" class="px-3 py-2 hover:text-[#FF9A3D]">ฟอร์ม</a>
-                <a href="./detail.html" class="px-3 py-2 font-semibold
+              <a href="./form.html" class="px-3 py-2 hover:text-[#FF9A3D]">ฟอร์ม</a>
+              <a href="./detail.html" class="px-3 py-2 font-semibold
                   text-[#FF9A3D]">รายละเอียด</a>
-              </div>
             </div>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
 
-      <div class="container mx-auto justify-center pt-14">
+    <div class="flex flex-wrap justify-center mt-10">
+
+      {% for item in mycontent %}
+      <div class="p-4 max-w-sm">
+
+        <div class="flex rounded-lg h-full bg-slate-200 p-8 flex-col">
+          <div class="flex items-center mb-3">
+            <div
+              class="w-8 h-8 mr-3 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white flex-shrink-0">
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="w-5 h-5" viewBox="0 0 24 24">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h2 class="text-black font-extrabold">{{item.name}}</h2>
+          </div>
+          <div class="flex flex-col justify-between flex-grow">
+            <!-- <p class="leading-relaxed text-base text-black">Blue bottle crucifix vinyl post-ironic four dollar
+              toast vegan taxidermy. Gastropub indxgo juice poutine.</p> -->
+            <img src="{{ url_for('static', filename='images/lecturers/'+item.img)}}"
+              class="rounded-t h-72 w-full object-cover" />
+
+            <a href="#" class="mt-3 text-black hover:text-blue-600 inline-flex items-center">Learn More
+              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
 
       </div>
+      {% endfor %}
+
+
 
     </div>
-  </body>
+</body>
 
 </html>

@@ -60,28 +60,35 @@
       {% for item in mycontent %}
       {% if item.no_faculty == 1 %}
       <p class="py-8 font-bold text-xl tracking-wide">Information Technology</p>
-      <div class="border rounded-2xl py-4 px-10 flex drop-shadow-md">
-        <img src="{{ url_for('static', filename='images/form.png')}}" width="40" height="200" />
-        <div class="flex px-14 items-center">
-          <p>{{item.title}}</p>
+      <a href="./form_input.html">
+        <div class="border rounded-2xl py-4 px-10 flex drop-shadow-md">
+          <img src="{{ url_for('static', filename='images/form.png')}}" width="40" height="200" />
+          <div class="flex px-14 items-center">
+            <p>{{item.title}}</p>
+          </div>
+
         </div>
-      </div>
+      </a>
       {% elif item.no_faculty == 2 %}
       <p class="py-8 font-bold text-xl tracking-wide">Liberal Arts</p>
-      <div class="border rounded-2xl py-4 px-10 flex drop-shadow-md">
-        <img src="{{ url_for('static', filename='images/form.png')}}" width="40" height="200" />
-        <div class="flex px-14 items-center">
-          <p>{{item.title}}</p>
+      <a href="./form_input.html">
+        <div class="border rounded-2xl py-4 px-10 flex drop-shadow-md">
+          <img src="{{ url_for('static', filename='images/form.png')}}" width="40" height="200" />
+          <div class="flex px-14 items-center">
+            <p>{{item.title}}</p>
+          </div>
         </div>
-      </div>
+      </a>
       {% elif item.no_faculty == 3 %}
       <p class="py-8 font-bold text-xl tracking-wide">Science</p>
-      <div class="border rounded-2xl py-4 px-10 flex drop-shadow-md">
-        <img src="{{ url_for('static', filename='images/form.png')}}" width="40" height="200" />
-        <div class="flex px-14 items-center">
-          <p>{{item.title}}</p>
+      <a href="./form_input.html">
+        <div class="border rounded-2xl py-4 px-10 flex drop-shadow-md">
+          <img src="{{ url_for('static', filename='images/form.png')}}" width="40" height="200" />
+          <div class="flex px-14 items-center">
+            <p>{{item.title}}</p>
+          </div>
         </div>
-      </div>
+      </a>
       {% endif %}
       {% endfor %}
     </div>

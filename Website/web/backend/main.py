@@ -30,15 +30,41 @@ app.add_middleware(
 
 # Set database
 
+# For docker
+
+# @app.get('/getfrom')
+# async def getfrom():
+#     cnx =  psycopg2.connect( host="db",
+#         database="myapp",
+#         user="postgres",
+#         password="postgres")
 
 
+#     cursor = cnx.cursor()
+#     cursor.execute("SELECT * FROM form")
+#     try:
+#         # Fetch the results into a Python variable
+#         results = cursor.fetchall()
+#         result_list = []
+#         for row in results:
+#             result = {
+#                 "id": row[0],
+#                 "title": row[1],
+#                 "no_faculty": row[2]
+#             }
+#             result_list.append(result)
+#         return result_list
+#     except (Exception, mysql.connector.DatabaseError):
+#         return False
+#     finally:
+#         cursor.close()
+#         cnx.close()
+
+#For mysql
 @app.get('/getfrom')
 async def getfrom():
-    cnx =  psycopg2.connect( host="db",
-        database="myapp",
-        user="postgres",
-        password="postgres")
-
+    cnx =  mysql.connector.connect( user='root', password='123456',
+                              host='localhost', port='3307', database='devtool_db')
 
     cursor = cnx.cursor()
     cursor.execute("SELECT * FROM form")
@@ -51,6 +77,33 @@ async def getfrom():
                 "id": row[0],
                 "title": row[1],
                 "no_faculty": row[2]
+            }
+            result_list.append(result)
+        return result_list
+    except (Exception, mysql.connector.DatabaseError):
+        return False
+    finally:
+        cursor.close()
+        cnx.close()
+
+@app.get('/getdetail')
+async def getfrom():
+    cnx =  mysql.connector.connect( user='root', password='123456',
+                              host='localhost', port='3307', database='devtool_db')
+
+    cursor = cnx.cursor()
+    cursor.execute("SELECT * FROM lecturers")
+    try:
+        # Fetch the results into a Python variable
+        results = cursor.fetchall()
+        result_list = []
+        for row in results:
+            result = {
+                "id": row[0],
+                "name": row[1],
+                "email": row[2],
+                "office": row[3],
+                "img": row[4]
             }
             result_list.append(result)
         return result_list
