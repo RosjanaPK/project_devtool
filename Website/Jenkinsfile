@@ -10,7 +10,7 @@ pipeline {
             
                 echo 'Initial : Delete  containers and images'
                  dir('Website') { // change directory to Lab_docker_Jenkins
-                    echo "Current path is ${pwd()}"
+                    echo "Current path  ${pwd()}"
                     sh "docker-compose down --rmi all --volumes || true"
                 }
             }
