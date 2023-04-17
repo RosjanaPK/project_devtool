@@ -11,23 +11,23 @@ import psycopg2
 app = FastAPI()
 
 #For docker
-# origins = [
-#     "http://localhost:8080",
-#     "http://localhost:8000",
-#     "http://localhost:8081",
-#     "http://localhost:3000",
-#     "https://stackpython.co"
-
-# ]
-#For jenkins docker
 origins = [
-    "http://54.196.54.244:8080",
-    "http://54.196.54.244:8000",
-    "http://54.196.54.244:8081",
-    "http://54.196.54.244:3000",
+    "http://localhost:8080",
+    "http://localhost:8000",
+    "http://localhost:8081",
+    "http://localhost:3000",
     "https://stackpython.co"
 
 ]
+# #For jenkins docker
+# origins = [
+#     "http://54.196.54.244:8080",
+#     "http://54.196.54.244:8000",
+#     "http://54.196.54.244:8081",
+#     "http://54.196.54.244:3000",
+#     "https://stackpython.co"
+
+# ]
 
 app.add_middleware(
     CORSMiddleware,
