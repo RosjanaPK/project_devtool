@@ -19,7 +19,7 @@ app = FastAPI()
 #     "https://stackpython.co"
 
 # ]
-#For jenkins
+#For jenkins docker
 origins = [
     "http://54.196.54.244:8080",
     "http://54.196.54.244:8000",

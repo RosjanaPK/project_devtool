@@ -7,7 +7,7 @@ from PyPDF2 import PdfReader
 
 app = Flask(__name__)
 
-# For docker
+# For docker jenkin
 url = "http://backend:8000"
 
 # # For Mysql
